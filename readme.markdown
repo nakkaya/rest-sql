@@ -2,14 +2,6 @@
 
 Rest SQL serves a fully RESTful API from a PostgreSQL database.
 
-## Installation
-
-The easiest way to get this docker image installed is to pull the latest version from the Docker registry:
-
-```sh
-docker pull suzel/docker-postgrest
-```
-
 ## Running
 
 Start DB,

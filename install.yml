@@ -11,14 +11,23 @@
    - name: docker deps
      command: pip install requests docker docker-compose
 
-   - name: copy docker-compose.yml
+   - name: disable service
+     docker_service:
+      project_src: /var/rest-api/
+      state: absent
+
+   - name: update service
      copy:
        force: yes
        src: "docker-compose.yml"
        dest: "/var/rest-api/"
    
-   - name: setup service
+   - name: install service
      docker_service:
       project_src: /var/rest-api/
+      state: present
+
+   - name: enable service
+     command: docker update --restart=always pg_web pg_rest pg_db
 
  handlers:

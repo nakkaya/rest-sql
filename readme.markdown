@@ -4,27 +4,32 @@ Rest SQL serves a fully RESTful API from a PostgreSQL database.
 
 ## Running
 
-Start DB,
+### Server
+
+To deploy to a remote server,
+
+```sh
+make ansible
+```
+
+### Locally
+
+To use locally,
 
 ```sh
 make start
 ```
 
-Optional, mark containers for restart,
-
-```sh
-docker update --restart=always <containers>
-```
-
 You can the visit the following URL in a browser on your host machine to get started:
 
 ```sh
-# Open PostgREST Service
-http://localhost:3000/
+# Open REST API 
+http://localhost:9090/
 
-# Open database browser (pgweb)
-http://localhost:8081/
+# Open database browser
+http://localhost:9091/
 ```
+
 ## Curl Samples
 
 ```sql

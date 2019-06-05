@@ -10,5 +10,5 @@ stop:
 	sudo docker-compose down
 
 clean:
-	sudo rm -rf ${DB_DATA}
+	sudo rm -rf db install.retry
 	sudo docker-compose rm postgres pgweb postgrest

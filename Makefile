@@ -1,4 +1,7 @@
-.PHONY: start stop clean
+.PHONY: ansible start stop clean
+
+ansible:
+	ansible-playbook -s install.yml -i hosts
 
 start:
 	sudo docker-compose up -d --build

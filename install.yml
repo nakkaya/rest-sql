@@ -1,0 +1,24 @@
+---
+-
+ 
+ hosts: all
+   
+ tasks:
+
+   - name: upgrade all packages
+     yum: name=* state=latest
+
+   - name: docker deps
+     command: pip install requests docker docker-compose
+
+   - name: copy docker-compose.yml
+     copy:
+       force: yes
+       src: "docker-compose.yml"
+       dest: "/var/rest-api/"
+   
+   - name: setup service
+     docker_service:
+      project_src: /var/rest-api/
+
+ handlers:

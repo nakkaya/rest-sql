@@ -10,6 +10,12 @@ Start DB,
 make start
 ```
 
+Optional, mark containers for restart,
+
+```sh
+docker update --restart=always <containers>
+```
+
 You can the visit the following URL in a browser on your host machine to get started:
 
 ```sh

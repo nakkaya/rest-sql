@@ -5,7 +5,7 @@ services:
   postgrest:
     image: postgrest/postgrest
     ports:
-      - "3000:3000"
+      - "9090:3000"
     environment:
       PGRST_DB_URI: postgres://app:app@postgres:5432/db
       PGRST_DB_SCHEMA: public
@@ -16,7 +16,7 @@ services:
   pgweb:
     image: sosedoff/pgweb
     ports:
-      - "8081:8081"
+      - "9091:8081"
     links:
       - postgres:postgres
     environment:

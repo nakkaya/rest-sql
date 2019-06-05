@@ -31,11 +31,11 @@ create table sensor_values
 ```sh
 curl -s -H "Content-Type: application/json" \
      -d '{"value" : "0"}'                   \
-      localhost:3000/sensor_values
+      localhost:9090/sensor_values
 ```
 
 ```sh
-curl -G localhost:3000/sensor_values \
+curl -G localhost:9090/sensor_values \
      -d select="epoch,value"         \
      -d order=epoch.desc             \
      -d limit=10
